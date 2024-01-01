@@ -1,7 +1,7 @@
 2.0 v
-[] It should have a function to add a todo
-[] It should have a function to edit a todo
-[] It should have a function to remove a todo
+[x] It should have a function to add a todo
+[x] It should have a function to edit a todo
+[x] It should have a function to remove a todo
 
 1.0 v
 [x] It should have a place to store todos
