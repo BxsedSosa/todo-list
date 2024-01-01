@@ -20,8 +20,3 @@ function delText(index){
   todos.splice(index, 1);
   console.log(todos);
 }
-
-function todoComplete(index) {
-  todos[index].completed = true
-  console.log(todos);
-}
