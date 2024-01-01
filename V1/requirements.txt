@@ -1,0 +1,6 @@
+1.0 v
+[x] It should have a place to store todos
+[x]                a way to display todos
+[x]                      to add a todo
+[x]                      to edit a todo
+[]                      to remove a todos
