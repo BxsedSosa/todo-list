@@ -1,7 +1,10 @@
+6.0 v
+[] It should hav a function to toggle all todos
+
 5.0 v
-[] It should have a function that displays todos
-[] displayTodos should show the todoText property
-[] displayTodos should show the compelted property
+[x] It should have a function that displays todos
+[x] displayTodos should show the todoText property
+[x] displayTodos should show the compelted property
 
 4.0 v
 [x] It should have a function to toggle a todo

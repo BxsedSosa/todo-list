@@ -36,3 +36,24 @@ function displayTodos() {
     console.log(todos[i]);
   }
 }
+
+function allComplete() {
+
+  var completedTodos = 0;
+
+  for (let i=0; i < todos.length; i++) {
+    if (todos[i].completed === true) {
+      completedTodos++
+    }
+
+    if(completedTodos === todos.length) {
+      for (let i = 0; i < todos.length; i++){
+        todos[i].completed = false;
+      } 
+    } else {
+        todos[i].completed = true;
+    }
+
+  }
+  displayTodos()
+}
