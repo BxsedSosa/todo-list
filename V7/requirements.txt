@@ -1,3 +1,7 @@
+7.0 v
+[x] Should have a displayingTodos button
+[x] The displayTodos button should run the displayTodos function 
+
 6.0 v
 [x] It should hav a function to toggle all todos
 [x] If everything is false ==> change everything to true
