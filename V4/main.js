@@ -22,10 +22,12 @@ function delText(index){
 }
 
 function todoComplete(index) {
+
   if (todos[index].completed === false) {
     todos[index].completed = true;
   } else {
     todos[index].completed = false;
   }
+
   console.log(todos);
 }
