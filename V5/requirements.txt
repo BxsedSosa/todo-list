@@ -1,5 +1,5 @@
 4.0 v
-[] It should have a function to toggle a todo
+[x] It should have a function to toggle a todo
 
 3.0 v
 [x] We should initialize the todos var with objects 
