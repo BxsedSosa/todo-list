@@ -20,9 +20,9 @@ var editIndexInput = document.getElementById('edit-position-input');
 var editInput = document.getElementById('edit-text-input');
 editButton.addEventListener('click', editText);
 
-var rmvBtn = document.getElementById('btn-remove');
-var rmvInpt = document.getElementById('remove-input');
-rmvBtn.addEventListener('click',delText);
+// var rmvBtn = document.getElementById('btn-remove');
+// var rmvInpt = document.getElementById('remove-input');
+// rmvBtn.addEventListener('click',delText);
 
 var togbtn = document.getElementById('btn-toggle');
 var toginpt = document.getElementById('tog-input')
@@ -45,11 +45,18 @@ function editText(){
   displayTodos();
 }
 
-function delText(){
-  var rmvindx = rmvInpt.value
-  todos.splice(rmvindx, 1);
-  displayTodos();
+// function delText(){
+//   var rmvindx = rmvInpt.value
+//   todos.splice(rmvindx, 1);
+//   displayTodos();
+// }
+
+function delText(event){
+  var pos = event.target.id;
+  todos.splice(pos,1)
+  displayTodos()
 }
+
 
 function todoComplete() {
   var index = toginpt.value
@@ -65,6 +72,7 @@ function displayTodos() {
   var todosUl = document.getElementById('boss');
   todosUl.innerHTML= '';
   
+  
   for (var i=0; i<todos.length; i++) {
     var todoLi = document.createElement('li');
 
@@ -73,7 +81,14 @@ function displayTodos() {
     } else {
       todoLi.innerText =`[ ] ${todos[i].todoText}`;
     }
+
+    var remvBtn = document.createElement('button');
+    remvBtn.id = i;
+    remvBtn.innerText = 'rmv'
+    remvBtn.addEventListener('click', delText)
     
+
+    todoLi.appendChild(remvBtn)
     todosUl.appendChild(todoLi);
   }
 }

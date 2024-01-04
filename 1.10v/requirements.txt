@@ -1,3 +1,7 @@
+10.0 v
+[x] Create a remove button with the list
+[] Make the remove button work
+
 9.0 v
 [x] There should be a li for each todo
 [x] Each li should show the todoText property
