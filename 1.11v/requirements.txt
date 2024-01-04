@@ -1,47 +1,52 @@
-10.0 v
+1.11 v
+[x] Add toggle button each item list 
+[x] make the toggle button change status of the element
+
+1.10 v
 [x] Create a remove button with the list
 [x] Make the remove button work
 
-9.0 v
+1.09 v
 [x] There should be a li for each todo
 [x] Each li should show the todoText property
 [x] Each li should show the compelted property
 
 
-8.0 v
+1.08 v
 [x] Should be working button for adding a todo
 [x] Should be working button for editing a todo
 [x] Should be working button for removing a todo
 [x] Should be working button for toggling a todo
 
-7.0 v
+1.07 v
 [x] Should have a displayingTodos button
 [x] The displayTodos button should run the displayTodos function 
 
-6.0 v
+1.06 v
 [x] It should hav a function to toggle all todos
 [x] If everything is false ==> change everything to true
 [x] If everything is true ==> change everything to false
 [x] If mixed ==> change everything to true
-5.0 v
+
+1.05 v
 [x] It should have a function that displays todos
 [x] displayTodos should show the todoText property
 [x] displayTodos should show the compelted property
 
-4.0 v
+1.04 v
 [x] It should have a function to toggle a todo
 
-3.0 v
+1.03 v
 [x] We should initialize the todos var with objects 
 [x] The add function should add objects  
 [x] The edit function should edit objects
 
-2.0 v
+1.02 v
 [x] It should have a function to add a todo
 [x] It should have a function to edit a todo
 [x] It should have a function to remove a todo
 
-1.0 v
+1.01 v
 [x] It should have a place to store todos
 [x]                a way to display todos
 [x]                      to add a todo

@@ -5,9 +5,6 @@ var todos = [
 ];
 displayTodos()
 
-var displayTodosButton = document.getElementById('btn-display');
-displayTodosButton.addEventListener('click',displayTodos);
-
 var toggleAllButton = document.getElementById('btn-toogle-all');
 toggleAllButton.addEventListener('click', allComplete);
 
@@ -15,15 +12,10 @@ var addButton = document.getElementById('btn-add');
 var addInput = document.getElementById('inputAdd');
 addButton.addEventListener('click', addText);
 
-var editButton = document.getElementById('btn-edit');
-var editIndexInput = document.getElementById('edit-position-input');
-var editInput = document.getElementById('edit-text-input');
-editButton.addEventListener('click', editText);
-
-var togbtn = document.getElementById('btn-toggle');
-var toginpt = document.getElementById('tog-input')
-togbtn.addEventListener('click', todoComplete)
-
+// var editButton = document.getElementById('btn-edit');
+// var editIndexInput = document.getElementById('edit-position-input');
+// var editInput = document.getElementById('edit-text-input');
+// editButton.addEventListener('click', editText);
 
 
 
@@ -34,26 +26,27 @@ function addText() {
   addInput.value = '';
 }
 
-function editText(){
-  var index = editIndexInput.value;
-  var changeText = editInput.value;
-  todos[index].todoText = changeText;
+// function editText(){
+//   var index = editIndexInput.value;
+//   var changeText = editInput.value;
+//   todos[index].todoText = changeText;
+//   displayTodos();
+// }
+
+
+function delText(event){
+  var str = event.target.id;
+  var index = str.split('-')
+  todos.splice(index[1],1);
   displayTodos();
 }
 
-function delText(event){
-  var pos = event.target.id;
-  todos.splice(pos,1)
-  displayTodos()
-}
-
-
-function todoComplete() {
-  var index = toginpt.value
-  if (todos[index].completed === false) {
-    todos[index].completed = true;
+function todoComplete(event) {
+  var index = event.target.id.split('-');
+  if (todos[index[1]].completed === false) {
+    todos[index[1]].completed = true;
   } else {
-    todos[index].completed = false;
+    todos[index[1]].completed = false;
   }
   displayTodos();
 }
@@ -73,13 +66,19 @@ function displayTodos() {
     }
 
     var remvBtn = document.createElement('button');
-    remvBtn.id = i;
+    remvBtn.id = `rem-${i}`;
     remvBtn.innerText = 'rmv'
     remvBtn.addEventListener('click', delText)
     
+    var togBtn = document.createElement('button');
+    togBtn.id = `tog-${i}`;
+    togBtn.innerText = 'toggle'
+    togBtn.addEventListener('click', todoComplete)
 
-    todoLi.appendChild(remvBtn)
+    todoLi.appendChild(togBtn);
+    todoLi.appendChild(remvBtn);
     todosUl.appendChild(todoLi);
+    
   }
 }
 
@@ -104,3 +103,14 @@ function allComplete() {
   displayTodos()
 }
 
+function quiz(text) {
+  var newText = '';
+  for (var i = 0; i < text.length; i++) {
+    if (text[i] === '-') {
+      newText += '--';
+    } else {
+      newText += text[i];
+    }
+  }
+  return ('--' + newText + '--') .split('-');
+}
