@@ -1,3 +1,6 @@
+9.0 v
+[x] There should be a li for each todo
+
 8.0 v
 [x] Should be working button for adding a todo
 [x] Should be working button for editing a todo
