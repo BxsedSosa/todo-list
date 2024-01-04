@@ -12,13 +12,6 @@ var addButton = document.getElementById('btn-add');
 var addInput = document.getElementById('inputAdd');
 addButton.addEventListener('click', addText);
 
-// var editButton = document.getElementById('btn-edit');
-// var editIndexInput = document.getElementById('edit-position-input');
-// var editInput = document.getElementById('edit-text-input');
-// editButton.addEventListener('click', editText);
-
-
-
 function addText() {
   var initialTodoText = addInput.value;
   todos.push({todoText: initialTodoText, completed: false});
@@ -26,18 +19,19 @@ function addText() {
   addInput.value = '';
 }
 
-// function editText(){
-//   var index = editIndexInput.value;
-//   var changeText = editInput.value;
-//   todos[index].todoText = changeText;
-//   displayTodos();
-// }
-
-
 function delText(event){
   var str = event.target.id;
   var index = str.split('-')
   todos.splice(index[1],1);
+  displayTodos();
+}
+
+function editText(event){
+  var editStr = window.prompt();
+  var index = event.target.id.split('-')[1];
+  console.log(index)
+  todos[index].todoText = editStr;
+  
   displayTodos();
 }
 
@@ -64,18 +58,26 @@ function displayTodos() {
     } else {
       todoLi.innerText =`[ ] ${todos[i].todoText}`;
     }
-
-    var remvBtn = document.createElement('button');
-    remvBtn.id = `rem-${i}`;
-    remvBtn.innerText = 'rmv'
-    remvBtn.addEventListener('click', delText)
+  
     
     var togBtn = document.createElement('button');
     togBtn.id = `tog-${i}`;
     togBtn.innerText = 'toggle'
     togBtn.addEventListener('click', todoComplete)
+    
+    var editBtn = document.createElement('button')
+    editBtn.id = `edit-${i}`
+    editBtn.innerText = 'edit'
+    editBtn.addEventListener('click', editText)
+
+    var remvBtn = document.createElement('button');
+    remvBtn.id = `rem-${i}`;
+    remvBtn.innerText = 'rmv'
+    remvBtn.addEventListener('click', delText)
+
 
     todoLi.appendChild(togBtn);
+    todoLi.appendChild(editBtn);
     todoLi.appendChild(remvBtn);
     todosUl.appendChild(todoLi);
     
