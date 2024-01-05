@@ -1,6 +1,8 @@
 1.12v 
-[] Each todo should have its own edit button
-[] The edit buttons should actually work
+[x] Each todo should have its own edit button
+[x] The edit buttons should actually work
+[x] If someone hits cancel we should nothing
+[x] If someone hits ok and the field is empty we should nothing
 
 1.11 v
 [x] Add toggle button each item list 

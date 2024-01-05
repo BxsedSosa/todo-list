@@ -29,8 +29,10 @@ function delText(event){
 function editText(event){
   var editStr = window.prompt();
   var index = event.target.id.split('-')[1];
-  console.log(index)
-  todos[index].todoText = editStr;
+
+  if (editStr !== null && editStr !== '' && editStr !== ' ') {
+    todos[index].todoText = editStr;
+  }
   
   displayTodos();
 }
